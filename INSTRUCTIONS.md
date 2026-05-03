@@ -22,6 +22,8 @@ Copy `template.py` as your initial template for the project. It demonstrates how
 - Keep status documents current. Remove completed refactor notes instead of preserving stale warnings.
 - Record the current verification command and the last meaningful validation state in handoff notes.
 - Add doctests near small units of logic, and fixture tests for whole-program behavior.
+- When fixture tests are small, prefer inline doctest docstrings over separate fixture files.
+- Put doctest helpers in a small test namespace; keep test-only imports local.
 - Test colored output explicitly when rendering uses ANSI.
 - Keep fixtures small and organized by case.
 - Use a simple Makefile: `all` should run formatting/fixes, lint/type checks, and tests. Run `make` regularly.
