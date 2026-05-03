@@ -15,6 +15,9 @@
 - Use numeric separators for large literals, for example `40_000`.
 - Keep CLI argument classes thin: parse inputs, call core logic, print output, return exit codes.
 - Some CLI frameworks may not support rich annotations such as `Literal[...]`; keep those fields runtime-compatible and cast at the boundary.
+- Use path types deliberately: filesystem handles should be `Path`, while display names, labels, and external metadata should stay strings.
+- Keep status documents current. Remove completed refactor notes instead of preserving stale warnings.
+- Record the current verification command and the last meaningful validation state in handoff notes.
 - Add doctests near small units of logic, and fixture tests for whole-program behavior.
 - Test colored output explicitly when rendering uses ANSI.
 - Keep fixtures small and organized by case.

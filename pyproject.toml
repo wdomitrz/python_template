@@ -9,6 +9,7 @@ ignore = [
     "INP001",
     "C901",
     "PLR09",
+    "T2",
 ]
 extend-select = ["I"]
 
