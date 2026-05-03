@@ -1,5 +1,8 @@
+Copy `template.py` as your initial template for the project. It demonstrates how cli arguments should be handled.
+
 # Coding Instructions
 
+- In case of non-standard linting error, consult the user.
 - Prefer a single-file implementation when the program is small enough to stay readable.
 - Keep external dependencies minimal. If one dependency is allowed, isolate it at the CLI boundary.
 - Use `@dataclass(frozen=True, kw_only=True)` as the main data abstraction.
@@ -22,4 +25,5 @@
 - Test colored output explicitly when rendering uses ANSI.
 - Keep fixtures small and organized by case.
 - Use a simple Makefile: `all` should run formatting/fixes, lint/type checks, and tests. Run `make` regularly.
+  - See the existing Makefile
 - Maintain a short handoff/status document for ongoing refactors and unfinished decisions.
