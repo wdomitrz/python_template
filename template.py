@@ -6,28 +6,31 @@
 #
 # /// script
 # dependencies = [
-#   "typer",
 # ]
 # ///
 
 from __future__ import annotations
 
+import argparse
 from dataclasses import dataclass
-
-import typer
+from typing import Self, cast
 
 
 @dataclass(frozen=True, kw_only=True)
 class Args:
-    who: str = "World"
+    who: str
 
-    def __post_init__(self) -> None:
-        raise typer.Exit(self.main())
+    @classmethod
+    def from_args(cls, argv: list[str] | None = None) -> Self:
+        parser = argparse.ArgumentParser()
+        _ = parser.add_argument("--who", type=str, default="World")
+        args = parser.parse_args(argv)
+        return cls(who=cast(str, args.who))
 
-    def main(self) -> int:
+    def run(self) -> int:
         print(f"Hello {self.who}!")
         return 0
 
 
 if __name__ == "__main__":
-    typer.run(Args)
+    raise SystemExit(Args.from_args().run())
