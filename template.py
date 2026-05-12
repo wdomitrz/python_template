@@ -13,7 +13,9 @@ from __future__ import annotations
 
 import argparse
 from dataclasses import dataclass
-from typing import Self, cast
+from typing import cast
+
+from typing_extensions import Self
 
 
 @dataclass(frozen=True, kw_only=True)
